@@ -1,0 +1,57 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@nextui-org/button": "^2.0.37",
+    "@nextui-org/card": "^2.0.33",
+    "@nextui-org/chip": "^2.0.32",
+    "@nextui-org/input": "^2.2.4",
+    "@nextui-org/link": "^2.0.34",
+    "@nextui-org/navbar": "^2.0.36",
+    "@nextui-org/select": "^2.2.5",
+    "@nextui-org/skeleton": "^2.0.31",
+    "@nextui-org/switch": "^2.0.33",
+    "@nextui-org/system": "^2.2.5",
+    "@nextui-org/theme": "^2.2.9",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "framer-motion": "^11.3.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "use-dark-mode": "^2.3.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
