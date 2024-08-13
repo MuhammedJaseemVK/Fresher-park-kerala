@@ -1,0 +1,15 @@
+{
+  "name": "fresher-park-jobs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
+    "start": "node backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -35,7 +35,7 @@ function App() {
 
   const fetchJobs = async () => {
     try {
-      const result = await axios.get('http://localhost:8080/api/v1/jobs/getJobs');
+      const result = await axios.get('/api/v1/jobs/getJobs');
       const fresherJobs = result.data;
       setJobs(fresherJobs);
       setIsLoaded(true);
@@ -53,7 +53,6 @@ function App() {
   const handleFilterChange = (event) => {
     const selectedKey = Array.from(event)[0];
     setSelectedFilter(selectedKey);
-    console.log(selectedKey)
   }
 
   useEffect(() => {
