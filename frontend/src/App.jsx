@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import * as React from "react";
 import { NextUIProvider } from "@nextui-org/system";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from '@fisch0920/use-dark-mode';
 import { Input } from "@nextui-org/input";
 import { Select, SelectItem } from "@nextui-org/select";
 
