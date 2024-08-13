@@ -13,7 +13,7 @@ function Hero() {
                 <div className='flex gap-2'>
                     <Link
                         isExternal
-                        href="https://github.com/MuhammedJaseemVK/FresherParkJobs"
+                        href="https://github.com/MuhammedJaseemVK/Fresher-park-kerala/"
                     >
                         <Button color="secondary" className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-2 md:py-3 lg:py-4 xl:py-5"
                             endContent={<FaGithub />} >
