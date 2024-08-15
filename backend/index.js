@@ -15,7 +15,7 @@ dotenv.config();
 connectDB();
 app.use(cors());
 app.use('/api/v1/jobs', jobRoutes);
-cron.schedule('*/10 * * * *', () => {
+cron.schedule('* * * * *', () => {
     scrapJobsController();
 });
 
