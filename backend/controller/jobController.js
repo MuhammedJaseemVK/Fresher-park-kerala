@@ -8,7 +8,7 @@ const scrapJobsController = async () => {
         const browser = await puppeteer.launch({
             executablePath: puppeteer.executablePath(),
             headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            userDataDir: '/opt/render/.cache/puppeteer'
           });
 
         const infoparkJobSelector = { jobElement: '.joblist', companyName: '.jobs-comp-name a', jobTitle: '.mt5 a', jobLink: '.joblist .mt5 a', jobDeadline: '.job-date', techparkName: 'Infopark' };
