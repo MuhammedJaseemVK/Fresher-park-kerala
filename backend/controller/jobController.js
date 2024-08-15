@@ -1,11 +1,14 @@
 const { default: mongoose } = require('mongoose');
-const { scrapJobsService, scrapTechnoparkJobs,filterTrainingCompanies } = require('../service/scrapperService');
+const { scrapJobsService, scrapTechnoparkJobs, filterTrainingCompanies } = require('../service/scrapperService');
 const puppeteer = require('puppeteer');
 const jobModel = require('../models/jobModel');
 
 const scrapJobsController = async () => {
     try {
-        const browser = await puppeteer.launch();
+        const browser =
+            puppeteer.launch({
+                executablePath: '/opt/render/.cache/puppeteer'
+            });
 
         const infoparkJobSelector = { jobElement: '.joblist', companyName: '.jobs-comp-name a', jobTitle: '.mt5 a', jobLink: '.joblist .mt5 a', jobDeadline: '.job-date', techparkName: 'Infopark' };
         const cyberparkJobSelector = { jobElement: '.job_listing', companyName: '.company strong', jobTitle: '.position h3', jobLink: '.job_listing a', jobDeadline: 'unknown', techparkName: 'Cyberpark' };
@@ -46,9 +49,9 @@ const scrapJobsController = async () => {
 const getJobsController = async (req, res) => {
     try {
         const fresherJobs = await jobModel.find({});
-        const formattedFresherJobs = fresherJobs.map((fresherJob)=>{
-            const {companyName,title,jobLink,jobDeadline,techparkName} = fresherJob;
-            return {companyName,title,jobLink,jobDeadline,techparkName}
+        const formattedFresherJobs = fresherJobs.map((fresherJob) => {
+            const { companyName, title, jobLink, jobDeadline, techparkName } = fresherJob;
+            return { companyName, title, jobLink, jobDeadline, techparkName }
         })
         console.log('all jobs from all parks sent');
         return res.status(200).send(formattedFresherJobs);
