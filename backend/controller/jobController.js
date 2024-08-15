@@ -46,8 +46,12 @@ const scrapJobsController = async () => {
 const getJobsController = async (req, res) => {
     try {
         const fresherJobs = await jobModel.find({});
-        console.log('all jobs from all parks sent bro');
-        return res.status(200).send(fresherJobs);
+        const formattedFresherJobs = fresherJobs.map((fresherJob)=>{
+            const {companyName,title,jobLink,jobDeadline,techparkName} = fresherJob;
+            return {companyName,title,jobLink,jobDeadline,techparkName}
+        })
+        console.log('all jobs from all parks sent');
+        return res.status(200).send(formattedFresherJobs);
     }
     catch (error) {
         console.log("Error in fetching jobs from Database");
