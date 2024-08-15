@@ -56,7 +56,7 @@ const scrapJobsService = async (browser, url, jobSelector) => {
         console.log(fresherJobs.length);
         await page.close();
 
-        console.log(`${jobSelector.techparkName}response sent bro`);
+        console.log(`${jobSelector.techparkName} response sent`);
         return fresherJobs;
     }
     catch (err) {
@@ -83,7 +83,7 @@ const getDeadlineDate = (date) => {
 
 const filterTrainingCompanies =(jobList)=>{
     const trainingCompaniesRegex = /(galtech|altos|idatalytics|mashuptech)/i;
-    return jobList.filter((jov)=>!trainingCompaniesRegex.test(job.companyName));
+    return jobList.filter((job)=>!trainingCompaniesRegex.test(job.companyName));
 }
 
 const scrapTechnoparkJobs = async () => {

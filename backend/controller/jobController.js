@@ -34,7 +34,7 @@ const scrapJobsController = async () => {
             session.endSession();
             console.log('Error replacing job collection:', error);
         }
-        console.log('all jobs from all parks sent bro');
+        console.log('all jobs from all parks sent');
     }
     catch (error) {
         console.log(error);
