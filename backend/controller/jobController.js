@@ -5,11 +5,14 @@ const jobModel = require('../models/jobModel');
 
 const scrapJobsController = async () => {
     try {
+        const executablePath = puppeteer.executablePath();
+        console.log('Using Chrome executable:', executablePath);
+      
         const browser = await puppeteer.launch({
-            executablePath: puppeteer.executablePath(),
-            headless: true,
-            userDataDir: '/opt/render/.cache/puppeteer'
-          });
+          executablePath,
+          headless: true,
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
 
         const infoparkJobSelector = { jobElement: '.joblist', companyName: '.jobs-comp-name a', jobTitle: '.mt5 a', jobLink: '.joblist .mt5 a', jobDeadline: '.job-date', techparkName: 'Infopark' };
         const cyberparkJobSelector = { jobElement: '.job_listing', companyName: '.company strong', jobTitle: '.position h3', jobLink: '.job_listing a', jobDeadline: 'unknown', techparkName: 'Cyberpark' };
