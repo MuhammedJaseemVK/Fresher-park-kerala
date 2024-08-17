@@ -2,14 +2,15 @@ const { default: mongoose } = require('mongoose');
 const { scrapJobsService, scrapTechnoparkJobs, filterTrainingCompanies } = require('../service/scrapperService');
 const puppeteer = require('puppeteer');
 const jobModel = require('../models/jobModel');
+const { cacheDirectory } = require('../puppeteer.config.cjs');
 
 const scrapJobsController = async () => {
     try {
-        const executablePath = puppeteer.executablePath();
+        // const executablePath = puppeteer.executablePath();
         // console.log('Using Chrome executable:', executablePath);
       
         const browser = await puppeteer.launch({
-          executablePath,
+          executablePath:cacheDirectory,
           headless: true,
           args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
