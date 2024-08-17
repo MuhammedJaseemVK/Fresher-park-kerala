@@ -6,7 +6,7 @@ const jobModel = require('../models/jobModel');
 const scrapJobsController = async () => {
     try {
         const executablePath = puppeteer.executablePath();
-        console.log('Using Chrome executable:', executablePath);
+        // console.log('Using Chrome executable:', executablePath);
       
         const browser = await puppeteer.launch({
           executablePath,
