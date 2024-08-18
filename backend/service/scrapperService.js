@@ -16,7 +16,7 @@ const scrapJobsService = async (browser, url, jobSelector) => {
             }
         });
 
-        await page.goto(url, { waitUntil: 'domcontentloaded' });
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
         const fresherJobs = await page.evaluate((jobSelector) => {
             const isAFresherJob = (title) => {
@@ -81,9 +81,9 @@ const getDeadlineDate = (date) => {
     return deadlineDate.toLocaleDateString('en-IN');
 }
 
-const filterTrainingCompanies =(jobList)=>{
+const filterTrainingCompanies = (jobList) => {
     const trainingCompaniesRegex = /(galtech|altos|idatalytics|mashuptech)/i;
-    return jobList.filter((job)=>!trainingCompaniesRegex.test(job.companyName));
+    return jobList.filter((job) => !trainingCompaniesRegex.test(job.companyName));
 }
 
 const scrapTechnoparkJobs = async () => {
@@ -118,4 +118,4 @@ const scrapTechnoparkJobs = async () => {
 }
 
 
-module.exports = { scrapJobsService, scrapTechnoparkJobs,filterTrainingCompanies }
+module.exports = { scrapJobsService, scrapTechnoparkJobs, filterTrainingCompanies }

@@ -15,7 +15,7 @@ dotenv.config();
 connectDB();
 app.use(cors());
 app.use('/api/v1/jobs', jobRoutes);
-cron.schedule('* * * * *', () => {
+cron.schedule('0 * * * *', () => {
     scrapJobsController();
 });
 
@@ -24,7 +24,7 @@ function pingServer() {
     console.log('Pinging server to keep it alive...');
     
     const options = {
-        hostname:'https://fresher-park-kerala.onrender.com/',
+        hostname:'fresher-park-kerala.onrender.com',
         method: 'GET',
         timeout: 60000 
     };
