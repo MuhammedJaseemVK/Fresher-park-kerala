@@ -5,7 +5,7 @@ const jobModel = require('../models/jobModel');
 
 const scrapJobsController = async () => {
     try {
-        const browser = puppeteer.launch({ headless: true })
+        const browser = await puppeteer.launch({ headless: true })
 
         const infoparkJobSelector = { jobElement: '.joblist', companyName: '.jobs-comp-name a', jobTitle: '.mt5 a', jobLink: '.joblist .mt5 a', jobDeadline: '.job-date', techparkName: 'Infopark' };
         const cyberparkJobSelector = { jobElement: '.job_listing', companyName: '.company strong', jobTitle: '.position h3', jobLink: '.job_listing a', jobDeadline: 'unknown', techparkName: 'Cyberpark' };
