@@ -8,7 +8,7 @@ function Header({ darkMode }) {
   return (
     <Navbar>
       <NavbarBrand>
-        <p className="font-bold text-inherit text-2xl">Fresher Park Jobs</p>
+        <p className="font-bold text-inherit text-2xl">Fresher Park Kerala</p>
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>

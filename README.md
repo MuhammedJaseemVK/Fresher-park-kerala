@@ -80,7 +80,7 @@ $ npm start
 ## Link
 
 - GitHub Link: [GitHub](https://github.com/MuhammedJaseemVK/Fresher-park-kerala)
-- Live Site Link: [Fresher park jobs](https://fresher-park-kerala.onrender.com)
+- Live Site Link: [Fresher park kerala](https://fresher-park-kerala.onrender.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
