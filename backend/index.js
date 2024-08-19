@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 const connectDB = require('./config/db');
 const cron = require('node-cron');
-const https =require('https');
+const https = require('https');
 
 const port = 8080;
 const jobRoutes = require('./routes/jobRoutes');
@@ -22,11 +22,11 @@ cron.schedule('0 * * * *', () => {
 
 function pingServer() {
     console.log('Pinging server to keep it alive...');
-    
+
     const options = {
-        hostname:'fresher-park-kerala.onrender.com',
+        hostname: 'fresher-park-kerala.onrender.com',
         method: 'GET',
-        timeout: 60000 
+        timeout: 60000
     };
 
     const req = https.request(options, (res) => {
@@ -52,7 +52,7 @@ cron.schedule('*/10 * * * *', pingServer);
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 );
 
 
