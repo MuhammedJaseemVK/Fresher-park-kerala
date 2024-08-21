@@ -46,7 +46,7 @@ function pingServer() {
     req.end();
 }
 
-cron.schedule('*/10 * * * *', pingServer);
+cron.schedule('*/25 * * * *', pingServer);
 
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));

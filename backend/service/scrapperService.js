@@ -45,7 +45,7 @@ const scrapJobsService = async (browser, url, jobSelector) => {
                     jobs.push({
                         companyName: job.querySelector(jobSelector.companyName).innerText,
                         title: jobTitle,
-                        jobLink: document.querySelector(jobSelector.jobLink).href,
+                        jobLink: job.querySelector(jobSelector.jobLink).href,
                         jobDeadline: jobDeadline ? getDeadlineDate(jobDeadline.innerText) : "unknown",
                         techparkName: jobSelector.techparkName
                     })
