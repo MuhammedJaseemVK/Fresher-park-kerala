@@ -68,7 +68,7 @@ const scrapJobsService = async (browser, url, jobSelector) => {
 const isAFresherJob = (title) => {
     const jobTitle = title.toLowerCase();
     const pattern = /\bintern(ship)?\b/;
-    if (jobTitle.includes('fresher') || jobTitle.includes('0-') || pattern.test(jobTitle) || jobTitle.includes('apprentice') || jobTitle.includes('trainee') || jobTitle.includes('graduate')) {
+    if (jobTitle.includes('fresher') || jobTitle.includes('0-') || pattern.test(jobTitle) || jobTitle.includes('apprentice') || jobTitle.includes('trainee') || jobTitle.includes('graduate')|| jobTitle.includes('entry-level')|| jobTitle.includes('entry level')|| jobTitle.includes('junior')|| jobTitle.includes('jr')) {
         return true;
     }
     else {
