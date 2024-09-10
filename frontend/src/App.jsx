@@ -52,6 +52,9 @@ function App() {
 
   const handleFilterChange = (event) => {
     const selectedKey = Array.from(event)[0];
+    if (!selectedKey || selectedFilter === selectedKey) {
+      return;
+    }
     setSelectedFilter(selectedKey);
   }
 
