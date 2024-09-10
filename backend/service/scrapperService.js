@@ -8,7 +8,11 @@ const scrapJobsService = async (browser, url, jobSelector) => {
     await page.setRequestInterception(true);
     await page.on("request", (req) => {
       const resourceType = req.resourceType();
-      if (resourceType === "document" || resourceType === "script") {
+      if (
+        resourceType === "document" ||
+        resourceType === "script" ||
+        resourceType === "xhr" 
+      ) {
         req.continue();
       } else {
         req.abort();
@@ -16,6 +20,8 @@ const scrapJobsService = async (browser, url, jobSelector) => {
     });
 
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+    // Wait for the job elements to be available on the page
+    await page.waitForSelector(jobSelector.jobElement, { timeout: 60000 });
 
     const fresherJobs = await page.evaluate((jobSelector) => {
       const isAFresherJob = (title) => {
@@ -78,7 +84,6 @@ const scrapJobsService = async (browser, url, jobSelector) => {
       });
       return jobs;
     }, jobSelector);
-    console.log(fresherJobs.length);
     await page.close();
 
     console.log(`${jobSelector.techparkName} response sent`);
