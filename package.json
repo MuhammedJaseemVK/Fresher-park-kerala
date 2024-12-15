@@ -6,8 +6,7 @@
   "scripts": {
     "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
     "start": "node backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "cd backend && npm install && cd ../frontend && npm install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
 
   "keywords": [],
