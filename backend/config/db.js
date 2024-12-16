@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURL = process.env.NODE_ENV ==="production" ? process.env.DEV_MONGODB_URL : process.env.PROD_MONGODB_URL ;
+const dbURL = process.env.NODE_ENV ==="production" ? process.env.PROD_MONGODB_URL : process.env.DEV_MONGODB_URL ;
 
 const connectDB = async () => {
     try {
