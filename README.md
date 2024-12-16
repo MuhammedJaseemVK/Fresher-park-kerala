@@ -64,7 +64,7 @@ npm run setup
 # Setup environmental variables
 1. Create a `.env` File
   In the `backend` folder of your project, create a `.env` file. This file will be used to store environment variables that your application requires.
-2. Add the MongoDB URI
+2. Add the MongoDB URI for production and development
   Inside the `.env` file, add the following line:
 MONGODB_URL=your_mongodb_connection_string
 

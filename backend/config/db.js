@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
+const dbURL = process.env.NODE_ENV ==="production" ? process.env.DEV_MONGODB_URL : process.env.PROD_MONGODB_URL ;
+
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URL);
+        await mongoose.connect(dbURL);
         console.log(`Mongodb connected ${mongoose.connection.host}`);
     }
     catch (error) {
