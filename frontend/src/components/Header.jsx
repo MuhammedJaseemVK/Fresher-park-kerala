@@ -15,6 +15,7 @@ function Header({ darkMode }) {
           <Switch
             defaultSelected
             size="lg"
+            aria-label="switch theme"
             color="secondary"
             thumbIcon={({ isSelected, className }) =>
               isSelected ? (

@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+dotenv.config();
 const connectDB = require('./config/db');
 const cron = require('node-cron');
 const https = require('https');
@@ -11,7 +12,6 @@ const port = 8080;
 const jobRoutes = require('./routes/jobRoutes');
 const { scrapJobsController } = require('./controller/jobController');
 
-dotenv.config();
 connectDB();
 app.use(cors());
 app.use('/api/v1/jobs', jobRoutes);

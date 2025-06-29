@@ -81,7 +81,7 @@ function App() {
                 onSelectionChange={handleFilterChange}
                 defaultSelectedKeys={['allParks']}
               >
-                {filters.map((filter, index) => (
+                {filters.map((filter) => (
                   <SelectItem key={filter.value} value={filter.value}>
                     {filter.label}
                   </SelectItem>
