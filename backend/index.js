@@ -14,7 +14,7 @@ const { scrapJobsController } = require('./controller/jobController');
 
 connectDB();
 app.use(cors());
-app.use('/api/v1/jobs', jobRoutes);
+app.use('/api/v1', jobRoutes);
 cron.schedule('0 * * * *', () => {
     scrapJobsController();
 });

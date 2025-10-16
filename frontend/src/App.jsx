@@ -35,7 +35,7 @@ function App() {
 
   const fetchJobs = async () => {
     try {
-      const result = await axios.get('/api/v1/jobs/getJobs');
+      const result = await axios.get('/api/v1/jobs');
       const fresherJobs = result.data;
       setJobs(fresherJobs);
       setIsLoaded(true);

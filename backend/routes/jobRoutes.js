@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getJobsController, scrapJobsController } = require('../controller/jobController');
+const { getJobsController } = require('../controller/jobController');
 
-router.get('/getJobs', getJobsController);
-router.get('/scrapJobs', scrapJobsController);
+router.get('/jobs', getJobsController);
 
 module.exports = router;

@@ -59,7 +59,7 @@ function JobCard({ job }) {
       </CardBody>
       <CardFooter>
         <Button isExternal showAnchorIcon as={Link} href={jobLink}>
-          Apply job
+          Apply for job
         </Button>
       </CardFooter>
     </Card>
